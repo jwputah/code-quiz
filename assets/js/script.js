@@ -34,7 +34,7 @@ var myQuestions = [
 
 var timerDiv = document.getElementById("timer");
 
-var finalScore = document.getElementById("finalScore");
+var finalScoreDiv = document.getElementById("finalScore");
 
 var startBtn = document.getElementById("startBtn");
 
@@ -44,21 +44,21 @@ var quizDiv = document.getElementById("quiz");
 
 var resultsDiv = document.getElementById("results");
 
+
+
 var choicesA = document.getElementById("btn0");
 var choicesB = document.getElementById("btn1");
 var choicesC = document.getElementById("btn2");
 var choicesD = document.getElementById("btn3");
 
-var initialInput = document.getElementById("initialInput");
+var inputInitials = document.getElementById("inputInitials");
 
 var correctAnswer = 0;
-// var finalScore = [];
 
 // function start timer
 function newQuiz() {
 	var startDiv = document.getElementById("startScreen");
 	startDiv.setAttribute("class", "hide");
-	// quizDiv.removeAttribute("class");
 	choicesDiv.removeAttribute("class");
 	intervalTimer = setInterval(function () {
 		time--;
@@ -125,13 +125,29 @@ function gameOver() {
 	resultsDiv.setAttribute("class", "hide");
 	quizDiv.setAttribute("class", "hide");
 	choicesDiv.setAttribute("class", "hide");
-	finalScore.removeAttribute("class", "hide");
-	localStorage.setItem("finalScore", finalScore);
-	console.log(finalScore);
+	finalScoreDiv.removeAttribute("class", "hide");
+	var finalScore = document.getElementById("correctAnswerResults");
+	finalScore.textContent = correctAnswer;
+}
+
+function userScore () {
+	if (inputInitials.value === "") {
+		alert("Please enter your initials");
+		return;
+	}
+
+	finalScoreDiv.setAttribute("class", "hide");
+	resultsDiv.removeAttribute("class", "hide");
+
+	resultsDiv.textContent = correctAnswer;
+
+	userInitials = JSON.stringify(inputInitials.value);
+	userInitials = localStorage.setItem(userInitials, correctAnswer);
 }
 
 //function show high score
 function highScore() {
+
 
 }
 //add event listener
@@ -140,4 +156,4 @@ choicesA.addEventListener("click", userA);
 choicesB.addEventListener("click", userB);
 choicesC.addEventListener("click", userC);
 choicesD.addEventListener("click", userD);
-submitBtn.addEventListener("click", highScore);
+submitBtn.addEventListener("click", userScore);
