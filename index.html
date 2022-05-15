@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
+
 <body>
-    <nav class= "container-fluid p-5">
-        <section class= "row justify-content-center bg-white text-blue">
-            <div id="timer" class="col-md-3 col-sm-12">
-                <i class="far fa-clock"></i> Time: <span id= "timeLeft">0</span>
+    <nav class="container-fluid p-5">
+        <section class="row justify-content-center bg-white text-blue">
+            <div id="timer" class="col-md-3">
+                <i class="far fa-clock"></i> Time: <span id="timeLeft">0</span>
             </div>
-            <div id= "timesUp" class="col-md-3 col-sm-12" style= "display: none;">Time's Up!</div>
-            <div id = "highScore"> <a href = "">High Score</a></div>
+            <div id="timesUp" class="col-md-3" style="display: none;">Time's Up!</div>
+            <div id="highScore"> <a href="">High Score</a></div>
         </section>
     </nav>
 
-    <div class= "container-fluid p-5">
-        <div class = "col">
-            <div id = "startScreen">
-                <button id= "startBtn" class= "col justify-content-center btn bg-primary">Start Code Quiz!</button>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="startScreen" class="col col-lg-2">
+                <button id="startBtn" class="btn">Start Code Quiz!</button>
             </div>
-                <div id= "quiz" class= "questionScreen hide w-100">
-                    <h2 id = "title">Quiz question here</h2>
-                </div>
-                    <div id = "choices" class = "answerScreen hide col-md-12">
-                        <p><button id="btn0" class="btn btn-dark answer"></button></p>
-                        <p><button id="btn1" class="btn btn-dark answer"></button></p>
-                        <p><button id="btn2" class="btn btn-dark answer"></button></p>
-                        <p><button id="btn3" class="btn btn-dark answer"></button></p>
-                    </div>
-                <div id= "results" class= "resultsScreen hide"></div>
-
-                <div id = "finalScore" class = "finalScoreScreen hide">
-                    <h2>All Done</h2>
-                        <p>Final Score: <span id = "correctAnswerResults" >0</span>
-                            Enter Initials <input type = "text" id = "inputInitials"/>
-                            <button id= "submitBtn" class= "btn bg-danger justify-content-center">Submit</button>
-                        </p>
-                </div>
+            <div id="quiz" class="questionScreen hide row justify-content-center w-100">
+                <h2 id="title">Quiz question here</h2>
             </div>
         </div>
     </div>
 
+    <div class="container row justify-content-center">
+        <div id="answer" class="answerScreen hide ">
+            <div id="choices" class="col col-lg-2">
+            <ol>
+                <li><button id="btn0" class="btn btn-dark answer">a1</button></li>
+                <li><button id="btn1" class="btn btn-dark answer">a2</button></li>
+                <li><button id="btn2" class="btn btn-dark answer">a3</button></li>
+                <li><button id="btn3" class="btn btn-dark answer">a4</button></li>
+            </ol>
+            </div>
+        </div>
+    </div>
+
+
+            </div class="row">
+
+            <div id="results" class="resultsScreen hide"></div>
+
+            <div id="finalScore" class="finalScoreScreen hide">
+                <h2>All Done</h2>
+                <p>Final Score: <span id="correctAnswerResults">0</span>
+                    Enter Initials <input type="text" id="inputInitials" />
+                    <button id="submitBtn" class="btn bg-danger justify-content-center">Submit</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
     <script src="./assets/js/script.js"></script>
-    
+
 </body>
+
 </html>

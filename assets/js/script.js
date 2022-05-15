@@ -44,6 +44,10 @@ var quizDiv = document.getElementById("quiz");
 
 var resultsDiv = document.getElementById("results");
 
+var answerDiv = document.getElementById("answer");
+
+var choicesDiv = document.getElementById("choices");
+
 
 
 var choicesA = document.getElementById("btn0");
@@ -59,7 +63,6 @@ var correctAnswer = 0;
 function newQuiz() {
 	var startDiv = document.getElementById("startScreen");
 	startDiv.setAttribute("class", "hide");
-	choicesDiv.removeAttribute("class");
 	intervalTimer = setInterval(function () {
 		time--;
 		timerDiv.textContent = time;
@@ -77,11 +80,12 @@ function newQuiz() {
 };
 
 var titleElement = document.getElementById("title");
-var choicesDiv = document.getElementById("choices");
+
 
 // function get questions
 function startQuiz() {
 	quizDiv.removeAttribute("class", "hide");
+	answerDiv.removeAttribute("class", "hide");
 	titleElement.textContent = myQuestions[questionIndex].question;
 	choicesA.textContent = myQuestions[questionIndex].choices[0];
 	choicesB.textContent = myQuestions[questionIndex].choices[1];
