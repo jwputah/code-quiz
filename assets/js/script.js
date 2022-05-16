@@ -48,7 +48,7 @@ var answerDiv = document.getElementById("answer");
 
 var choicesDiv = document.getElementById("choices");
 
-
+var userInitials = document.getElementById("highScore");
 
 var choicesA = document.getElementById("btn0");
 var choicesB = document.getElementById("btn1");
@@ -143,18 +143,28 @@ function userScore () {
 	finalScoreDiv.setAttribute("class", "hide");
 	resultsDiv.removeAttribute("class", "hide");
 
-	resultsDiv.textContent = correctAnswer;
+	resultsDiv.textContent = "You Scored: "+  correctAnswer;
 
-	userInitials = JSON.stringify(inputInitials.value);
-	userInitials = localStorage.setItem(userInitials, correctAnswer);
+	userInitials = localStorage.setItem("user", inputInitials.value);
+	newScore = localStorage.setItem("score", correctAnswer);
 }
 
 //function show high score
-function highScore() {
-
+function getHighscore() {
+	var highScore = localStorage.getItem("score");
+	var newUser = localStorage.getItem("user");
+	console.log(newUser);
+	console.log(highScore);
+	startBtn.setAttribute("class", "hide");
 
 }
+
+
+
+
+
 //add event listener
+highScore.addEventListener("click", getHighscore);
 startBtn.addEventListener("click", newQuiz);
 choicesA.addEventListener("click", userA);
 choicesB.addEventListener("click", userB);
