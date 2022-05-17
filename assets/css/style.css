@@ -57,10 +57,30 @@ li {
     background-color: green;
 }
 
+#highScorebtn {
+    background-color: blue;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+}
+
 #results {
     font-size: 30px;
 }
 
 #finalScore {
     font-size: 20px;
+}
+
+#timer {
+    font-size: 20px;
+}
+
+#title {
+    font-size: 30px;
 }

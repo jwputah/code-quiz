@@ -20,24 +20,30 @@
                 <i class="far fa-clock"></i> Time: <span id="timeLeft">0</span>
             </div>
             <div id="timesUp" class="col-md-3" style="display: none;">Time's Up!</div>
-            <div id="highScore"> <a>High Score</a></div>
+            <div id="highScore"> <button id="highScorebtn">High Score</button>
+            </div>
         </section>
     </nav>
 
-    <div class="container">
+    <div id="quiz" class="container">
         <div class="row justify-content-center">
             <div id="startScreen" class="col col-lg-2">
                 <button id="startBtn" class="btn">Start Code Quiz!</button>
             </div>
-            <div id="quiz" class="questionScreen hide row justify-content-center w-100">
-                <h2 id="title">Quiz question here</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="title" class="hide row">
+            <div class="col align-self-center">
+                <h1>Quiz question here</h1>
             </div>
         </div>
     </div>
 
-    <div class="container row justify-content-center">
-        <div id="answer" class="answerScreen hide ">
-            <div id="choices" class="col col-lg-2">
+    <div class="container">
+        <div id="answer" class="answerScreen hide row ">
+            <div id="choices" class="col align-self-center">
             <ol>
                 <li><button id="btn0" class="btn btn-dark answer">a1</button></li>
                 <li><button id="btn1" class="btn btn-dark answer">a2</button></li>
@@ -48,22 +54,25 @@
         </div>
     </div>
 
-    <div class="container row justify-content-center">
-        <div class="col col-lg-4">
-            <div id="results" class="resultsScreen hide"></div>
+    <div class="container">
+        <div class="row">
+            <div id="results" class="resultsScreen hide col align-self-center"></div>
         </div>
     </div>
 
-    <div class="container row justify-content-center">
-        <div id="finalScore" class="finalScoreScreen hide col col-lg-2">
-            <h2>All Done</h2>
-                <h3>Final Score: 
-                    <span id="correctAnswerResults">0</span> Enter Initials 
-                    <input type="text" id="inputInitials" />
-                    <button id="submitBtn" class="btn">Submit</button>
-                </h3>
-                
+    <div class="container">
+        <div class="row">
+            <div id="finalScore" class="finalScoreScreen hide col align-self-center">
+                <h2>All Done!</h2>
+                    <h3>Final Score: 
+                        <span id="correctAnswerResults">0</span> Enter Initials 
+                        <input type="text" id="inputInitials" />
+                        <button id="submitBtn" class="btn">Submit</button>
+                    </h3>
+                    
+            </div>
         </div>
+
     </div>
 
     <script src="./assets/js/script.js"></script>

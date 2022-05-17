@@ -50,6 +50,10 @@ var choicesDiv = document.getElementById("choices");
 
 var userInitials = document.getElementById("highScore");
 
+var questDiv = document.getElementById("title");
+
+var titleElement = document.getElementById("title");
+
 var choicesA = document.getElementById("btn0");
 var choicesB = document.getElementById("btn1");
 var choicesC = document.getElementById("btn2");
@@ -59,10 +63,12 @@ var inputInitials = document.getElementById("inputInitials");
 
 var correctAnswer = 0;
 
-// function start timer
+// function start timer.
 function newQuiz() {
+	window.alert("70 seconds on the clock. A wrong answer subtract 10 seconds.");
 	var startDiv = document.getElementById("startScreen");
 	startDiv.setAttribute("class", "hide");
+	questDiv.removeAttribute("class", "hide");
 	intervalTimer = setInterval(function () {
 		time--;
 		timerDiv.textContent = time;
@@ -79,10 +85,7 @@ function newQuiz() {
 	startQuiz();
 };
 
-var titleElement = document.getElementById("title");
-
-
-// function get questions
+// function get questions.
 function startQuiz() {
 	quizDiv.removeAttribute("class", "hide");
 	answerDiv.removeAttribute("class", "hide");
@@ -93,13 +96,13 @@ function startQuiz() {
 	choicesD.textContent = myQuestions[questionIndex].choices[3];
 }
 
+// function to get next question.
 function nextQuestion(answer) {
 	if (myQuestions[questionIndex].answer === myQuestions[questionIndex].choices[answer]) {
 		correctAnswer++;
 		console.log("Correct", correctAnswer);
 		resultsDiv.removeAttribute("class");
 		resultsDiv.textContent = "Correct!";
-
 	} else {
 		time -= 10;
 		timerDiv.textContent = time;
@@ -107,7 +110,6 @@ function nextQuestion(answer) {
 		resultsDiv.removeAttribute("class");
 		resultsDiv.textContent = "Wrong!";
 	}
-
 	questionIndex++;
 
 	if (questionIndex < myQuestions.length) {
@@ -116,7 +118,7 @@ function nextQuestion(answer) {
 	} else {
 		gameOver ();
 	}
-}
+};
 
 function userA() { nextQuestion(0); }
 function userB() { nextQuestion(1); }
@@ -126,13 +128,14 @@ function userD() { nextQuestion(3); }
 // function game over
 function gameOver() {
 	clearInterval(intervalTimer);
+	titleElement.setAttribute("class", "hide");
 	resultsDiv.setAttribute("class", "hide");
 	quizDiv.setAttribute("class", "hide");
 	choicesDiv.setAttribute("class", "hide");
 	finalScoreDiv.removeAttribute("class", "hide");
 	var finalScore = document.getElementById("correctAnswerResults");
 	finalScore.textContent = correctAnswer;
-}
+};
 
 function userScore () {
 	if (inputInitials.value === "") {
@@ -147,21 +150,19 @@ function userScore () {
 
 	userInitials = localStorage.setItem("user", inputInitials.value);
 	newScore = localStorage.setItem("score", correctAnswer);
-}
+};
 
 //function show high score
 function getHighscore() {
 	var highScore = localStorage.getItem("score");
 	var newUser = localStorage.getItem("user");
+	finalScoreDiv.setAttribute("class", "hide");
 	console.log(newUser);
 	console.log(highScore);
-	startBtn.setAttribute("class", "hide");
-
-}
-
-
-
-
+	titleElement.setAttribute("class", "hide");
+	resultsDiv.removeAttribute("class", "hide");
+	resultsDiv.textContent = "High Score:"+ newUser + highScore;
+};
 
 //add event listener
 highScore.addEventListener("click", getHighscore);
