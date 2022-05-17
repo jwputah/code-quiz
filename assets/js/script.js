@@ -33,42 +33,31 @@ var myQuestions = [
 ];
 
 var timerDiv = document.getElementById("timer");
-
 var finalScoreDiv = document.getElementById("finalScore");
-
 var startBtn = document.getElementById("startBtn");
-
 var submit = document.getElementById("submitBtn")
-
 var quizDiv = document.getElementById("quiz");
-
 var resultsDiv = document.getElementById("results");
-
 var answerDiv = document.getElementById("answer");
-
 var choicesDiv = document.getElementById("choices");
-
 var userInitials = document.getElementById("highScore");
-
-var questDiv = document.getElementById("title");
-
 var titleElement = document.getElementById("title");
+var backBtn = document.getElementById("backBtn");
+var inputInitials = document.getElementById("inputInitials");
 
 var choicesA = document.getElementById("btn0");
 var choicesB = document.getElementById("btn1");
 var choicesC = document.getElementById("btn2");
 var choicesD = document.getElementById("btn3");
 
-var inputInitials = document.getElementById("inputInitials");
-
 var correctAnswer = 0;
 
 // function start timer.
 function newQuiz() {
-	window.alert("70 seconds on the clock. A wrong answer subtract 10 seconds.");
+	window.alert("70 seconds on the clock. Wrong answers -10 seconds off the clock.");
 	var startDiv = document.getElementById("startScreen");
 	startDiv.setAttribute("class", "hide");
-	questDiv.removeAttribute("class", "hide");
+	titleElement.removeAttribute("class", "hide");
 	intervalTimer = setInterval(function () {
 		time--;
 		timerDiv.textContent = time;
@@ -94,7 +83,7 @@ function startQuiz() {
 	choicesB.textContent = myQuestions[questionIndex].choices[1];
 	choicesC.textContent = myQuestions[questionIndex].choices[2];
 	choicesD.textContent = myQuestions[questionIndex].choices[3];
-}
+};
 
 // function to get next question.
 function nextQuestion(answer) {
@@ -145,9 +134,7 @@ function userScore () {
 
 	finalScoreDiv.setAttribute("class", "hide");
 	resultsDiv.removeAttribute("class", "hide");
-
 	resultsDiv.textContent = "You Scored: "+  correctAnswer;
-
 	userInitials = localStorage.setItem("user", inputInitials.value);
 	newScore = localStorage.setItem("score", correctAnswer);
 };
@@ -156,12 +143,14 @@ function userScore () {
 function getHighscore() {
 	var highScore = localStorage.getItem("score");
 	var newUser = localStorage.getItem("user");
+	resultsDiv.textContent = "High Score:"+'  '+newUser+' - '+highScore;
 	finalScoreDiv.setAttribute("class", "hide");
-	console.log(newUser);
-	console.log(highScore);
+	startBtn.setAttribute("class", "hide");
 	titleElement.setAttribute("class", "hide");
 	resultsDiv.removeAttribute("class", "hide");
-	resultsDiv.textContent = "High Score:"+ newUser + highScore;
+	backBtn.removeAttribute("class", "hide");
+	console.log(newUser);
+	console.log(highScore);
 };
 
 //add event listener
@@ -172,3 +161,4 @@ choicesB.addEventListener("click", userB);
 choicesC.addEventListener("click", userC);
 choicesD.addEventListener("click", userD);
 submitBtn.addEventListener("click", userScore);
+backBtn.addEventListener('click', function(){location.reload()});

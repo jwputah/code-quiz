@@ -20,7 +20,8 @@
                 <i class="far fa-clock"></i> Time: <span id="timeLeft">0</span>
             </div>
             <div id="timesUp" class="col-md-3" style="display: none;">Time's Up!</div>
-            <div id="highScore"> <button id="highScorebtn">High Score</button>
+            <div id="highScore"> 
+                <button id="highScorebtn">High Score</button>
             </div>
         </section>
     </nav>
@@ -34,16 +35,16 @@
     </div>
 
     <div class="container">
-        <div id="title" class="hide row">
-            <div class="col align-self-center">
-                <h1>Quiz question here</h1>
+        <div id="title" class="hide row justify-content-center">
+            <div class="col">
+                <h1></h1>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <div id="answer" class="answerScreen hide row ">
-            <div id="choices" class="col align-self-center">
+        <div id="answer" class="hide row justify-content-center">
+            <div id="choices" class="col col-lg-2">
             <ol>
                 <li><button id="btn0" class="btn btn-dark answer">a1</button></li>
                 <li><button id="btn1" class="btn btn-dark answer">a2</button></li>
@@ -55,14 +56,17 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <div id="results" class="resultsScreen hide col align-self-center"></div>
+        <div class="row justify-content-center">
+            <div class="col col-lg-4">
+                <div id="results" class="resultsScreen hide"></div>
+                <button id="backBtn" class="hide">Go Back</button>
+            </div>
         </div>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div id="finalScore" class="finalScoreScreen hide col align-self-center">
+        <div class="row justify-content-center">
+            <div id="finalScore" class="finalScoreScreen hide col col-lg-2">
                 <h2>All Done!</h2>
                     <h3>Final Score: 
                         <span id="correctAnswerResults">0</span> Enter Initials 
@@ -72,9 +76,7 @@
                     
             </div>
         </div>
-
     </div>
-
     <script src="./assets/js/script.js"></script>
 </body>
 
