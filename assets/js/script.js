@@ -11,9 +11,9 @@ var myQuestions = [
 		answer: "a. <br>"
 	},
 	{
-		question: "The ___ tag set provides information to the browser about your webpage including the author name and keywords.",
-		choices: ["a. <html></html>", "b. <body></body>", "c. <style></style>", "d. <meta></meta>"],
-		answer: "d. <meta></meta>"
+		question: "Javascript is an _______ language?",
+		choices: ["a. Object-Oriented", "b. Object-Based", "c. Procedural", "d. None of the above."],
+		answer: "a. Object-Oriented"
 	},
 	{
 		question: "Items in a(n) ___ list are preceded by numbers.",
@@ -21,15 +21,40 @@ var myQuestions = [
 		answer: "c. ordered"
 	},
 	{
-		question: "Images in your webpage may have the following extensions except",
-		choices: ["a. .png", "b. .gif", "c. .jpg", "d. .psd"],
-		answer: "d. .psd"
+		question: "Upon encountering empty statements, what does the Javascript Interpreter do?",
+		choices: ["a. Gives a warning", "b. Throws an error", "c. Ignores the statements", "d. None of the above."],
+		answer: "c. Ignores the statements"
 	},
 	{
-		question: "How do you add a comment in a CSS file?",
-		choices: ["a. /* this is a comment */", "b. // this is a comment //", "c. // this is a comment", "d. <! this is a comment>"],
-		answer: "a. /* this is a comment */"
+		question: "What keyword is used to check whether a given property is valid or not?",
+		choices: ["a. in", "b. is in", "c. lies", "d. check"],
+		answer: "a. in"
 	},
+	{
+		question: "What is the use of the <noscript> tag in Javascript?",
+		choices: ["a. The contents are displayed in non-JS-based browsers.", "b. Clears all the cookies and cache.", "c. Both A and B.", "d. None of the above."],
+		answer: "a. The contents are displayed in non-JS-based browsers."
+	},
+	{
+		question: "When an operators value is NULL, the typeof returned by the unary operator is:",
+		choices: ["a. Boolean", "b. Integer", "c. Undefined", "d. Object"],
+		answer: "d. Object"
+	},
+	{
+		question: "The process in which an object or data structure is translated into a format suitable for transferral over a network, or storage is called?",
+		choices: ["a. Object Serialization", "b. Object Encapsulation", "c. Object Inheritance", "d. None of the above."],
+		answer: "a. Object Serialization"
+	},
+	{
+		question: "Which function is used to serialize an object into a JSON string in Javascript?",
+		choices: ["a. stringify()", "b. convert()", "c. parse()", "d. None of the above."],
+		answer: "a. stringify()"
+	},
+	{
+		question: "Which of the following are closures in Javascript?",
+		choices: ["a. Variables", "b. Functions", "c. Objects", "d. All of the above."],
+		answer: "d. All of the above."
+	}
 ];
 
 var timerDiv = document.getElementById("timer");
